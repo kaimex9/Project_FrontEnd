@@ -1,14 +1,21 @@
-import { NgFor } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { NgFor } from '@angular/common'; // Importa la directiva NgFor
 import { NursesServiceService } from '../../services/nurses-service.service';
 
 @Component({
   selector: 'app-list-nurses',
   standalone: true,
-  imports: [NgFor,],
+  imports: [NgFor], // Agrega NgFor aquí
   templateUrl: './list-nurses.component.html',
-  styleUrl: './list-nurses.component.css'
+  styleUrls: ['./list-nurses.component.css'],
 })
-export class ListNursesComponent {
-  
+export class ListNursesComponent implements OnInit {
+  nurses: { id: number; first_name: string; last_name: string; password: string }[] = []; // Define el tipo de nurses
+
+  constructor() {}
+
+  ngOnInit(): void {
+    // Asigna los datos del servicio
+    this.nurses = NursesServiceService.nurses;
+  }
 }

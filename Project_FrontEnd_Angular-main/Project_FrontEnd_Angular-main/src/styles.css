@@ -1,0 +1,12 @@
+/* Global styles */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    height: 100vh;
+    overflow: hidden; /* Evita que se pueda desplazar cuando el fondo es fijo */
+  }
+  
+  * {
+    box-sizing: border-box; /* Asegura que el tamaño de los elementos incluya los bordes y el padding */
+  }
+  

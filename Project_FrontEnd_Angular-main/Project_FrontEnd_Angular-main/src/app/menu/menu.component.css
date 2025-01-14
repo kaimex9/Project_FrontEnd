@@ -1,0 +1,12 @@
+.navbar-brand {
+    font-weight: bold;
+    color: #007bff;
+  }
+  
+  .nav-link.active {
+    font-weight: bold;
+    color: #0056b3;
+  }
+  .navbar{
+    background-color: rgba(250, 250, 250, 0.637);
+  }

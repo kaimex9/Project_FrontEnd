@@ -1,0 +1,11 @@
+#login{
+    background-color: rgb(118, 143, 255);
+    border: 1px solid rgb(82, 186, 255);
+    border-radius: 20px;
+    color: rgba(255, 255, 255, 0.658);
+}
+
+#loginForm{
+    background-color: rgba(250, 250, 250, 0.637);
+    border-radius: 20px;
+}

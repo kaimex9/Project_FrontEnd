@@ -1,0 +1,21 @@
+<link rel="stylesheet" href="find-by-name.component.css">
+<script src="find-by-name.component.js" defer></script>
+<div id="glovalDiv">
+  <div id="panel">
+    <h1 id="searchTitle">Search nurse</h1>
+    <div id="form">
+      Nurse name:
+      <input type="text" id="nurseName" [(ngModel)]="nurseName" />
+    </div>
+    <div id="searchD">
+      <input type="button" value="Search" id="search" (click)="search()"/>
+    </div>
+    <div id="result">
+      <ul>
+        <li *ngFor="let nurse of filteredNurses">
+          User: {{ nurse.user }}, Password: {{ nurse.password }}
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

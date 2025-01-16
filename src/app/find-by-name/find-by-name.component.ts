@@ -1,12 +1,13 @@
 import { NgFor } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { MenuComponent } from "../menu/menu.component";
 
 
 @Component({
   selector: 'app-find-by-name',
   standalone: true,
-  imports: [FormsModule, NgFor],
+  imports: [FormsModule, NgFor, MenuComponent],
   templateUrl: './find-by-name.component.html',
   styleUrl: './find-by-name.component.css'
 })

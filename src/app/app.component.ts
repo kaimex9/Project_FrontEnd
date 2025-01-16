@@ -19,4 +19,5 @@ const appRoutes: Routes = [
 })
 export class AppComponent {
   title = 'listar_enfermeros';
+  
 }

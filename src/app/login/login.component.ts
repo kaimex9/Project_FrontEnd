@@ -1,8 +1,9 @@
-import { Component, NgModule } from '@angular/core';
+import { Component, NgModule, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Router, RouterLink, RouterLinkActive } from '@angular/router';
 import { NursesServiceService } from '../../services/nurses-service.service';
 import { Login } from './login.service';
+import { Alabay, Nurse } from '../../services/nurses-BBDD.service';
 
 
 
@@ -11,19 +12,40 @@ import { Login } from './login.service';
   standalone: true,
   imports: [FormsModule, RouterLink, RouterLinkActive],
   templateUrl: './login.component.html',
-  styleUrl: './login.component.css'
+  styleUrl: './login.component.css',
+  providers: [Alabay]
 })
-export class LoginComponent {
+export class LoginComponent implements OnInit{
 
   name = '';
   password = '';
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private _Alabay:Alabay) { }
 
+  nurses: Nurse[] = [];
+ 
+  ngOnInit(): void {
+    this.getAll();
+    console.log("me cago en todo");
+  }
+ 
+  getAll(){
+    this._Alabay.getNurses().subscribe(
+      (data: Nurse[]) => {
+        this.nurses = data;
+      }
+    )
+  }
   
-
   login(): void {
-    let nurse = Login(this.name, this.password);
+    let Alabay = this.name;
+    let Alabay2 = this.password;
+    let nurse = false;
+    this.nurses.forEach(function(a, index, n){
+      if(n[index].user.toLowerCase() == Alabay.toLowerCase() && n[index].pass == Alabay2){
+        nurse = true;
+      }
+    })
 
     if (nurse) {
       this.router.navigate(['list-nurses']);

@@ -43,7 +43,8 @@ export class LoginComponent implements OnInit{
     let nurse = false;
     this.nurses.forEach(function(a, index, n){
       if(n[index].user.toLowerCase() == Alabay.toLowerCase() && n[index].pass == Alabay2){
-        nurse = true;
+          localStorage.setItem("LoggedNurse", String(n[index].id));
+          nurse = true;
       }
     })
 
@@ -51,6 +52,7 @@ export class LoginComponent implements OnInit{
       this.router.navigate(['list-nurses']);
     } else {
       alert("Credenciales incorrectos");
+      console.log(Alabay);
     }
 
   };

@@ -1,0 +1,30 @@
+<div *ngIf="loading">Cargando datos del usuario...</div>
+
+<form *ngIf="!loading">
+  <div>
+    <label for="user">Nombre de Usuario:</label>
+    <input
+      id="user"
+      type="text"
+      [(ngModel)]="user"
+      [placeholder]="user" 
+      name="user" 
+    />
+  </div>
+
+  <div>
+    <label for="pass">Contraseña:</label>
+    <input
+      id="pass"
+      type="text"
+      [(ngModel)]="pass" 
+      [placeholder]="pass" 
+      name="pass" 
+    />
+  </div>
+
+  <div>
+    <button type="button" (click)="editUser()">Guardar Cambios</button>
+    <button type="button" (click)="deleteUser()">Eliminar Usuario</button>
+  </div>
+</form>

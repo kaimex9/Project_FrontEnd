@@ -4,10 +4,11 @@ import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 import { NgIf } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
+import { MenuComponent } from "../menu/menu.component";
 @Component({
   selector: 'app-user',
   standalone: true,
-  imports: [FormsModule, NgIf,HttpClientModule],
+  imports: [FormsModule, NgIf, HttpClientModule, MenuComponent],
   templateUrl: './user.component.html',
   styleUrls: ['./user.component.css']
 })

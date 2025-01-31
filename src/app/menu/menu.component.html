@@ -20,6 +20,10 @@
           <li class="nav-item">
             <a class="nav-link" routerLink="/find-by-name" routerLinkActive="active">Buscar enfermeros</a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/user" routerLinkActive="active">Usuario</a>
+
+          </li>
         </ul>
       </div>
       <h1 routerLink = "/list-nurses" *ngIf="loggedNurse()"> {{nurses[getIndexById()].user}}</h1>

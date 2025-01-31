@@ -5,6 +5,7 @@ import { ListNursesComponent } from './list-nurses/list-nurses.component';
 import { LoginComponent } from './login/login.component';
 import { FindByNameComponent } from './find-by-name/find-by-name.component';
 import { RegisterComponent } from './register/register.component';
+import { UserComponent } from './user/user.component';
 import { MenuComponent } from './menu/menu.component';
 import { NurseProfileComponent } from './nurse-profile/nurse-profile.component';
 export const routes: Routes = [
@@ -15,6 +16,7 @@ export const routes: Routes = [
     {path:'#',component:LoginComponent},
     { path: 'find-by-name', component: FindByNameComponent },
     { path: 'register', component: RegisterComponent},
+    {path: 'user', component: UserComponent},
     { path: 'menu', component: MenuComponent},
     { path: 'profile', component: NurseProfileComponent }
 ];

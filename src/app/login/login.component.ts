@@ -3,7 +3,7 @@ import { FormsModule } from '@angular/forms';
 import { Router, RouterLink, RouterLinkActive } from '@angular/router';
 import { NursesServiceService } from '../../services/nurses-service.service';
 import { Login } from './login.service';
-import { Alabay, Nurse } from '../../services/nurses-BBDD.service';
+import { Nurse, NurseConnection } from '../../services/nurses-BBDD.service';
 
 
 
@@ -13,14 +13,14 @@ import { Alabay, Nurse } from '../../services/nurses-BBDD.service';
   imports: [FormsModule, RouterLink, RouterLinkActive],
   templateUrl: './login.component.html',
   styleUrl: './login.component.css',
-  providers: [Alabay]
+  providers: [NurseConnection]
 })
 export class LoginComponent implements OnInit{
 
   name = '';
   password = '';
 
-  constructor(private router: Router, private _Alabay:Alabay) { }
+  constructor(private router: Router, private Nurse:NurseConnection) { }
 
   nurses: Nurse[] = [];
  
@@ -30,7 +30,7 @@ export class LoginComponent implements OnInit{
   }
  
   getAll(){
-    this._Alabay.getNurses().subscribe(
+    this.Nurse.getNurses().subscribe(
       (data: Nurse[]) => {
         this.nurses = data;
       }
@@ -53,6 +53,7 @@ export class LoginComponent implements OnInit{
     } else {
       alert("Credenciales incorrectos");
       console.log(Alabay);
+      console.log(this.nurses[0].user)
     }
 
   };

@@ -3,7 +3,7 @@ import { Component, Injectable } from "@angular/core";
 import { HttpClient, HttpHeaders } from "@angular/common/http";
  
 @Injectable()
-export class Alabay{
+export class NurseConnection{
    
     constructor (private conexHttp:HttpClient) { }
  

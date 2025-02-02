@@ -20,14 +20,6 @@ export class RegisterComponent {
   name = '';
   password = '';
   confirmpassword = '';
-  resultado = [];
-  // ngOnInit(): void{
-  //   this.Nurse.postNurses().subscribe(
-  //     (result) => {
-  //       this.resultado = result;
-  //     }
-  //   )
-  // }
 
   register(): void{
     let verify = confirmPassword(this.name, this.password, this.confirmpassword);
@@ -35,13 +27,12 @@ export class RegisterComponent {
       alert("Las contraseñas no coinciden");
     }else{
       alert("usuario");
-      console.log(this.name)
-      this.Nurse.postNurses().subscribe(
+      this.Nurse.postNurses(this.name, this.password).subscribe(
         (algo) => {
           console.log(algo);
         }
       )
-      //this.router.navigate(['list-nurses']);
+      this.router.navigate(['list-nurses']);
     }
     
   }

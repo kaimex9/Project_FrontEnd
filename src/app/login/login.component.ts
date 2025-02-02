@@ -27,7 +27,6 @@ export class LoginComponent implements OnInit{
  
   ngOnInit(): void {
     this.getAll();
-    console.log("me cago en todo");
   }
  
   getAll(){
@@ -53,8 +52,6 @@ export class LoginComponent implements OnInit{
       this.router.navigate(['list-nurses']);
     } else {
       alert("Credenciales incorrectos");
-      console.log(Alabay);
-      console.log(this.nurses[0].user)
     }
 
   };

@@ -22,7 +22,6 @@ export class FindByNameComponent {
     
     ngOnInit(): void {
       this.getAll();
-      console.log("me cago en todo");
     }
   
     getAll(){

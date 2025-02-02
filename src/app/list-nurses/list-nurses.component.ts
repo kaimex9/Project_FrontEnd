@@ -20,7 +20,6 @@ export class ListNursesComponent implements OnInit {
 
   ngOnInit(): void {
     this.getAll();
-    console.log("me cago en todo");
   }
 
   getAll(){

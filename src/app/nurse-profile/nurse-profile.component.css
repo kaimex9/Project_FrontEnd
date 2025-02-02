@@ -30,8 +30,11 @@
     
 }
 .profile-edit{
+    display: flex;
+    flex-direction: column;
+    gap: 100px;
     position: relative;
     float: right;
-    top: -30px;
-    
+    top: -160px;
 }
+

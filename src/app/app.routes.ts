@@ -8,6 +8,7 @@ import { RegisterComponent } from './register/register.component';
 import { UserComponent } from './user/user.component';
 import { MenuComponent } from './menu/menu.component';
 import { NurseProfileComponent } from './nurse-profile/nurse-profile.component';
+import { NurseProfileEditComponent } from './nurse-profile-edit/nurse-profile-edit.component';
 export const routes: Routes = [
 
     { path: 'list-nurses', component: ListNursesComponent },
@@ -18,5 +19,7 @@ export const routes: Routes = [
     { path: 'register', component: RegisterComponent},
     {path: 'user', component: UserComponent},
     { path: 'menu', component: MenuComponent},
-    { path: 'profile', component: NurseProfileComponent }
+    { path: 'profile', component: NurseProfileComponent},
+    { path: 'profile/edit', component: NurseProfileEditComponent}
+    
 ];

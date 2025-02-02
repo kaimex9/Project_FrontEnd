@@ -1,11 +1,13 @@
 import { Component } from '@angular/core';
 import { Nurse, NurseConnection } from '../../services/nurses-BBDD.service';
-import { Router } from '@angular/router';
+import { Router, RouterLinkActive } from '@angular/router';
+import { RouterLink } from '@angular/router';
+import { MenuComponent } from '../menu/menu.component';
 
 @Component({
   selector: 'app-nurse-profile',
   standalone: true,
-  imports: [],
+  imports: [RouterLink, RouterLinkActive, MenuComponent],
   templateUrl: './nurse-profile.component.html',
   styleUrl: './nurse-profile.component.css',
   providers: [NurseConnection]
@@ -25,5 +27,14 @@ constructor(private router: Router, private Nurse:NurseConnection) { }
         this.nurses = data;
       }
     )
+  }
+  getIndexById(){
+    var id = Number(localStorage.getItem("LoggedNurse"));
+    this.nurses.forEach(function(a, index, n){
+      if(id == n[index].id){
+        id = index;
+      }
+    })
+    return id;
   }
 }

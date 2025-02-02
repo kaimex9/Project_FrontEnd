@@ -1,9 +1,12 @@
 .info-nurse{
     position: relative;
     width: 952px;
-    background-color: blue;
+    background-color: rgb(56, 109, 223);
     margin: 0 auto;
     padding: 1%;
+    margin-top: 50px;
+    border-radius: 6px;
+    color: white;
 }
 .content{
     position: relative;
@@ -35,6 +38,6 @@
     gap: 100px;
     position: relative;
     float: right;
-    top: -160px;
+    top: -40px;
 }
 

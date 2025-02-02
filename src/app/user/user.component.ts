@@ -13,7 +13,7 @@ import { MenuComponent } from "../menu/menu.component";
   styleUrls: ['./user.component.css']
 })
 export class UserComponent implements OnInit {
-  userId: number = 1; // ID  para pruebas
+  userId: number = Number(localStorage.getItem("LoggedNurse")); // ID  para pruebas
   user: string = ''; // Nombre del usuario actual
   pass: string = ''; // Contraseña actual del usuario
   loading: boolean = true; // Estado de carga
@@ -93,6 +93,7 @@ export class UserComponent implements OnInit {
         alert('Usuario eliminado con éxito');
         this.user = '';
         this.pass = '';
+        localStorage.removeItem("LoggedNurse");
       },
       error: (err) => {
         console.error('Error al eliminar el usuario:', err);

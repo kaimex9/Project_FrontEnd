@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { NgFor } from '@angular/common'; // Importa la directiva NgFor
 import { NursesServiceService } from '../../services/nurses-service.service';
 import { MenuComponent } from "../menu/menu.component";
+import { Nurse, NurseConnection } from '../../services/nurses-BBDD.service';
 
 @Component({
   selector: 'app-list-nurses',
@@ -9,14 +10,24 @@ import { MenuComponent } from "../menu/menu.component";
   imports: [NgFor, MenuComponent], // Agrega NgFor aquí
   templateUrl: './list-nurses.component.html',
   styleUrls: ['./list-nurses.component.css'],
+  providers: [NurseConnection]
 })
 export class ListNursesComponent implements OnInit {
-  nurses: { id: number; first_name: string; last_name: string; password: string }[] = []; // Define el tipo de nurses
+  nurses: Nurse[] = [];
 
-  constructor() {}
+  constructor(private Nurse:NurseConnection) { }
+  
 
   ngOnInit(): void {
-    // Asigna los datos del servicio
-    this.nurses = NursesServiceService.nurses;
+    this.getAll();
+    console.log("me cago en todo");
+  }
+
+  getAll(){
+    this.Nurse.getNurses().subscribe(
+      (data: Nurse[]) => {
+        this.nurses = data;
+      }
+    )
   }
 }

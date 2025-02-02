@@ -4,13 +4,14 @@ import { Router, RouterLink, RouterLinkActive } from '@angular/router';
 import { NursesServiceService } from '../../services/nurses-service.service';
 import { Login } from './login.service';
 import { Nurse, NurseConnection } from '../../services/nurses-BBDD.service';
+import { MenuComponent } from '../menu/menu.component';
 
 
 
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [FormsModule, RouterLink, RouterLinkActive],
+  imports: [FormsModule, RouterLink, RouterLinkActive, MenuComponent],
   templateUrl: './login.component.html',
   styleUrl: './login.component.css',
   providers: [NurseConnection]

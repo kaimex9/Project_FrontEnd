@@ -1,8 +1,8 @@
-<p>chingchongers</p>
+<app-menu></app-menu>
 <div class = "info-nurse">
     <div class = "content">
         <div class = "profile-name">
-            <span> Manolito </span>
+            <span> {{ nurses[getIndexById()].user }} </span>
             <div class = "profile-summary">
             Descripción que no le dedicaremos más de 10 min en escribir. Para el corrector: Ponme un 10 porfa
             </div>
@@ -13,8 +13,7 @@
         </div>
 
         <div class = "profile-edit">
-            <button> Darse Baja </button>
-            <button> Editar Perfil </button> 
+            <button routerLink = "/user"> Editar Perfil </button> 
         </div>
         
     </div>
